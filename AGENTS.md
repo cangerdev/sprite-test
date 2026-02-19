@@ -64,6 +64,23 @@ The link will use `localhost:3000` — replace with the Sprite domain to use it 
 https://<your-sprite-name>.sprites.app/email-verification?token=<token>
 ```
 
+## Public URL
+
+By default the Sprite URL requires authentication (Bearer token). To make the app publicly accessible:
+
+```bash
+# Make public
+sprite url update --auth public
+
+# Check current URL and auth mode
+sprite url
+
+# Restore authentication
+sprite url update --auth default
+```
+
+Note: `sprite` is an external CLI run outside the VM, not inside it.
+
 ## Checkpoints
 
 Create checkpoints when the app is in a working state:
