@@ -66,16 +66,16 @@ https://<your-sprite-name>.sprites.app/email-verification?token=<token>
 
 ## Public URL
 
-By default the Sprite URL requires authentication (Bearer token). To make the app publicly accessible:
+Every Sprite gets a URL at `https://<name>.sprites.app`. By default it requires authentication (private). To make the app publicly accessible:
 
 ```bash
-# Make public
-sprite url update --auth public
-
 # Check current URL and auth mode
 sprite url
 
-# Restore authentication
+# Make public (no auth required)
+sprite url update --auth public
+
+# Restore private access
 sprite url update --auth default
 ```
 
