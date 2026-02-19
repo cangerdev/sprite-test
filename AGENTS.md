@@ -47,7 +47,13 @@ REACT_APP_API_URL=https://<your-sprite-name>.sprites.app
 
 ## Email Verification in Development
 
-The app uses `provider: Dummy` for email in `main.wasp`. This means verification emails are printed to the server log instead of being sent. To find a verification link:
+Set this in `.env.server` to skip email verification entirely in dev:
+
+```
+SKIP_EMAIL_VERIFICATION_IN_DEV=true
+```
+
+If you need to test the verification flow, the app uses `provider: Dummy` for email in `main.wasp`, which prints emails to the server log instead of sending them. To find a verification link:
 
 ```bash
 grep -i "verify\|token\|email-verification" /.sprite/logs/services/wasp-app.log
