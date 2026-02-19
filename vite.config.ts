@@ -6,5 +6,11 @@ export default defineConfig({
   plugins: [wasp(), tailwindcss()],
   server: {
     open: true,
+    allowedHosts: ['crystal-jade-panther-ihkr.sprites.app'],
+    proxy: {
+      '/auth': 'http://localhost:3001',
+      '/operations': 'http://localhost:3001',
+      '/jobs': 'http://localhost:3001',
+    },
   },
 })
